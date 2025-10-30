@@ -43,10 +43,10 @@ The repo can clone and run both containers in a few steps.
 2. Put both files under:
 
 
-src/data/train.csv
+    src/data/train.csv
 
 
-src/data/test.csv
+    src/data/test.csv
 
 ---
 
