@@ -1,10 +1,11 @@
 # Titanic-Disaster-Survival-Prediction (Python & R, Dockerized)
 
-This repo builds two reproducible containers to train and run a simple logistic regression model on the Titanic dataset:
+This repo builds two reproducible containers (Python and R) to train and run a simple logistic regression model on the Titanic dataset:
 
 - **Python**: `scikit-learn` pipeline  
 - **R**: `glm` (binomial)
 
+to pridict the survial of a passenger based on some demographics.
 The repo can clone and run both containers in a few steps.
 
 ---
@@ -22,15 +23,15 @@ The repo can clone and run both containers in a few steps.
     ├── data/
         ├── train.csv
         ├── test.csv
-        ├── gender_submission.csv   (example submission file)
+        ├── gender_submission.csv (example submission file)
     ├── py_app/
         ├── Dockerfile
         ├── requirements.txt
-        └── main.py
+        └── py_app.py
     └── r_app/
         ├── Dockerfile
         ├── install_packages.R        
-        └── main.R            
+        └── r_app.R            
 ```
 > Data files are intentionally **not** in the repo. '.gitignore' excludes 'data/' and '*.csv'.
 
@@ -84,7 +85,7 @@ What you'll see:
 
 ### 0) Clone
 ```bash
-git@github.com:ZhihanHu-19/Titanic-Disaster-Survival-Prediction.git
+git clone https://github.com/ZhihanHu-19/Titanic-Disaster-Survival-Prediction.git
 ```
 After that, a folder named "Titanic-Disaster-Survival-Prediction" will appear in the directory.
 
