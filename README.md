@@ -41,7 +41,11 @@ The repo can clone and run both containers in a few steps.
 
 1. Download **'train.csv'** and **'test.csv'** for the Titanic dataset: (https://www.kaggle.com/competitions/titanic/data)
 2. Put both files under:
+
+
 src/data/train.csv
+
+
 src/data/test.csv
 
 ---
