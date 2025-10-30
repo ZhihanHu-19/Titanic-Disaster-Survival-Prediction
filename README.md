@@ -19,7 +19,7 @@ The repo can clone and run both containers in a few steps.
 
 ## 2. Repository Structure
 ```bash
-└── src/
+── src/
     ├── data/
         ├── train.csv
         ├── test.csv
