@@ -1,3 +1,8 @@
+# import packages
+library(caret)
+library(dplyr)
+library(readr)
+
 # Step 1: Load data
 cat("\nStep 1: Load data\n")
 train <- read.csv("data/train.csv")
@@ -10,10 +15,14 @@ cat("Test shape:", nrow(test), "x", ncol(test), "\n")
 cat("\nStep 2: Process data\n")
 
 # fill values
+Mode <- function(x) { ux <- na.omit(unique(x)); ux[which.max(tabulate(match(x, ux)))] }
+mode_emb <- Mode(ifelse(train$Embarked == "", NA, train$Embarked))
+
 train$Age[is.na(train$Age)] <- median(train$Age, na.rm = TRUE)
-test$Age[is.na(test$Age)] <- median(test$Age, na.rm = TRUE)
-train$Embarked[train$Embarked == ""] <- "S"
-test$Fare[is.na(test$Fare)] <- median(test$Fare, na.rm = TRUE)
+test$Age[is.na(test$Age)] <- median(train$Age, na.rm = TRUE)
+train$Embarked[train$Embarked == ""] <- mode_emb
+train$Embarked[train$Embarked == ""] <- mode_emb
+test$Fare[is.na(test$Fare)] <- median(train$Fare, na.rm = TRUE)
 
 # categorical factors
 train$Sex <- factor(train$Sex)
