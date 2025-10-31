@@ -98,15 +98,20 @@ After that, a folder named "Titanic-Disaster-Survival-Prediction" will appear in
     src/data/test.csv
 
 ### 2) Python container
+```bash
 docker build -t titanic-app -f src/py_app/Dockerfile .
-
-
+```
+```bash
 docker run --rm -v "$PWD/src/data:/app/src/data" titanic-app
+```
 ### -> outputs src/data/predictions.csv
 
 ### 3) R container
+```bash
 docker build -t titanic-r -f src/r_app/Dockerfile .
+```
 
-
+```bash
 docker run --rm -v "$PWD/src/data:/app/data" titanic-r
+```
 ### -> outputs src/data/predictions_r.csv
